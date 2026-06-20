@@ -455,7 +455,7 @@ setMode(mode);render();
 </script></body></html>'''
 
 def main():
-    port = 8765
+    port = int(os.environ.get('PORT', 8765))
     server = HTTPServer(('0.0.0.0', port), Handler)
     print(f'雪峰Agent: http://127.0.0.1:{port}/')
     print(f'数据库: {"已加载" if HAS_DB else "未找到"}')
